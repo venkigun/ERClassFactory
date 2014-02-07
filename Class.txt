@@ -1,0 +1,66 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Configuration;
+using System.Data;
+using System.Data.<dbType>Client;
+
+namespace <database_name>
+{
+
+	public class <table_name>
+		{
+			<column_name>
+			
+			public int AddOrUpdate<table_name>()
+			{
+				try
+				{
+                    string connectionString = ConfigurationManager.AppSettings["DBConStr"];
+					using (<dbType>Connection conn = new <dbType>Connection(connectionString))
+					{
+						conn.Open();
+						<dbType>Command cmd = new <dbType>Command("dbo.Save<table_name>", conn);
+						cmd.CommandType = CommandType.StoredProcedure;
+						<save_params>
+						cmd.ExecuteNonQuery();
+					}
+					return 1;
+				}
+				catch
+				{
+					return 0;
+				}
+			}
+            public <table_name> SelectById(int keyId)
+            {
+				try
+				{
+					this.Id = keyId;
+                    string connectionString = ConfigurationManager.AppSettings["DBConStr"];
+					using (<dbType>Connection conn = new <dbType>Connection(connectionString))
+					{
+						conn.Open();
+						<dbType>Command cmd = new <dbType>Command("dbo.Get<table_name>", conn);
+						cmd.CommandType = CommandType.StoredProcedure;
+						<dbType>Parameter IdParam = new <dbType>Parameter();
+						IdParam.ParameterName = "@Id";
+						IdParam.<dbType>DbType = <dbType>DbType.Int;
+						IdParam.Value = keyId;
+						IdParam.Direction = ParameterDirection.Input;
+						cmd.Parameters.Add(IdParam);
+						SqlDataReader reader = cmd.ExecuteReader();
+						if (reader.Read())
+						{
+							<get_properties>
+						}
+						return this;
+					}
+				}
+				catch
+				{
+					return null;
+				}
+			}
+
+		}
+	}

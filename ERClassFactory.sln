@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 11.00
+# Visual Studio 2010
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{735E4CA8-ACDA-480D-B383-489E26764C7B}"
+	ProjectSection(SolutionItems) = preProject
+		Class.txt = Class.txt
+	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ERClassFactory", "SqlClassFactory\ERClassFactory.csproj", "{F927E77E-92D1-41F3-91FB-A87D5E34E4E4}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TestForm", "TestForm\TestForm.csproj", "{EDF2EB8D-7336-4BA5-9463-93D0706DBC7D}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{F927E77E-92D1-41F3-91FB-A87D5E34E4E4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F927E77E-92D1-41F3-91FB-A87D5E34E4E4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F927E77E-92D1-41F3-91FB-A87D5E34E4E4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F927E77E-92D1-41F3-91FB-A87D5E34E4E4}.Release|Any CPU.Build.0 = Release|Any CPU
+		{EDF2EB8D-7336-4BA5-9463-93D0706DBC7D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EDF2EB8D-7336-4BA5-9463-93D0706DBC7D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EDF2EB8D-7336-4BA5-9463-93D0706DBC7D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EDF2EB8D-7336-4BA5-9463-93D0706DBC7D}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
