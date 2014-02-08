@@ -62,5 +62,32 @@ namespace <database_name>
 				}
 			}
 
+			public int DeleteById(int keyId)
+            {
+				try
+				{
+					this.Id = keyId;
+                    string connectionString = ConfigurationManager.AppSettings["DBConStr"];
+					using (<dbType>Connection conn = new <dbType>Connection(connectionString))
+					{
+						conn.Open();
+						<dbType>Command cmd = new <dbType>Command("dbo.Delete<table_name>", conn);
+						cmd.CommandType = CommandType.StoredProcedure;
+						<dbType>Parameter IdParam = new <dbType>Parameter();
+						IdParam.ParameterName = "@Id";
+						IdParam.<dbType>DbType = <dbType>DbType.Int;
+						IdParam.Value = keyId;
+						IdParam.Direction = ParameterDirection.Input;
+						cmd.Parameters.Add(IdParam);
+						int result = cmd.ExecuteNonQuery();
+						return result;
+					}
+				}
+				catch
+				{
+					return -1;
+				}
+			}
+
 		}
 	}
